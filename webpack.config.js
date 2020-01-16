@@ -12,6 +12,22 @@ module.exports = {
         test: /\.js$/,
         include: [path.resolve(__dirname, "src")],
         loader: require.resolve("babel-loader")
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       }
     ]
   },

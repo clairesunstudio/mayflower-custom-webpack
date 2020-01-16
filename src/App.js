@@ -1,5 +1,5 @@
 import React from "react";
-// import { Button } from "@massds/mayflower-react";
+import { Button } from "@massds/mayflower-react";
 
 const App = () => (
   <main>
