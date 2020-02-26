@@ -1,2 +1,21 @@
-node_modules
-public
+# Ignore all config files other than example
+**/config/*.js
+.aws-config/
+
+# Dependency directories
+node_modules/
+
+# Next.js build output
+.next/
+
+# Next.js static export
+out/
+
+# Mac filesystem file
+.DS_Store
+
+# terraform metadata
+.terraform/
+
+# IDE-specific files
+.vscode/
