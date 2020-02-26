@@ -1,6 +1,7 @@
 import React from "react";
 import App from "../components/App";
 import PropTypes from "prop-types";
+import "../../styles/app.scss";
 
 /**
  * Overrides the default Next.js App so that we can persist common layout
