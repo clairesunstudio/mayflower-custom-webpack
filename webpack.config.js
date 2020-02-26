@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    client: ["./src/index.js"]
+    client: ["./src/index.js", "./index.html"]
   },
   mode: "development",
   module: {
@@ -25,7 +25,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|eot|svg|ttf|woff|woff2)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'file-loader?name=/assets/[name].[ext]',
           },
         ],
       }
