@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@massds/mayflower-react": "^9.39.3",
+    "@massds/mayflower-tokens": "^1.4.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },

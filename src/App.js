@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Icon } from "@massds/mayflower-react";
+import './index.css'
 
 const App = () => (
   <main>
