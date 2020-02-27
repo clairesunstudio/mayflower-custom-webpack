@@ -8,8 +8,8 @@ https://designsystem.digital.gov/design-tokens/typesetting/font-family/
 --------------------------------------------------------------------------------
 */
 
-$assets-path: '../../..';
-@import '@massds/mayflower-tokens/dist/scss/fonts';
+$assets-path: '~@massds/mayflower-tokens/dist';
+@import '~@massds/mayflower-tokens/dist/scss/fonts';
 
 $theme-typeface-tokens: (
   texta: (

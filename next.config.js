@@ -5,14 +5,16 @@ const resolve = require("resolve");
 const withCSS = require("@zeit/next-css");
 // Portal uses Sass (and we import the U.S. Web Design System's Sass)
 const withSass = require("@zeit/next-sass");
+const withFonts = require('next-fonts')
 
 global.navigator = () => null;
 
 module.exports = withSass(
-  withCSS({
-    cssLoaderOptions: {
-      url: false // Disable url() resolving and let it do what CSS normally does. Fixes USWDS usage.
-    },
+  withCSS(withFonts({
+      enableSvg: true,
+cssLoaderOptions: {
+  // url: false // Disable url() resolving and let it do what CSS normally does. Fixes USWDS usage.
+},
     exportTrailingSlash: true,
     exportPathMap: async function() {
       const paths = {
@@ -28,28 +30,6 @@ module.exports = withSass(
     },
     webpack(config, options) {
       const { dir, isServer } = options;
-      config.externals = [];
-      config.module.rules.push({
-        test: /\.(eot|svg|ttf|woff|woff2)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'static/',
-              publicPath: '/_next/',
-              limit: 1000
-            }
-          }
-          // {
-          //   loader: 'url-loader',
-          //   options: {
-          //     outputPath: 'static/',
-          //     publicPath: '/_next/',
-          //     limit: 1000
-          //   }
-          // }
-        ]
-      })
       // This modifies what is excluded by Webpack in output bundles to resolve conflicts with @aws-amplify CSS files.
       if (isServer) {
         config.externals.push((context, request, callback) => {
@@ -74,5 +54,5 @@ module.exports = withSass(
       }
       return config;
     }
-  })
+  }))
 );
