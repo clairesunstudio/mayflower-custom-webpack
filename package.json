@@ -8,7 +8,7 @@
     "start": "npm-run-all -p watch-css start-js"
   },
   "dependencies": {
-    "@massds/mayflower-react": "^9.39.3",
+    "@massds/mayflower-react": "^12.0.1",
     "@massds/mayflower-tokens": "^1.4.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
@@ -22,7 +22,7 @@
     "node-sass-chokidar": "^1.3.4",
     "npm-run-all": "^4.1.2",
     "style-loader": "^1.1.3",
-    "svg-inline-loader": "^0.8.0",
+    "svg-inline-loader": "^0.8.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   }
